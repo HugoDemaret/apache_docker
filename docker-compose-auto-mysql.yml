@@ -18,16 +18,16 @@ services:
                   - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
                   - "traefik.enable=true"
                   # Set host
-                  - "traefik.http.routers.mibdeparrain.rule=Host(`your.url.url`)"
+                  - "traefik.http.routers.webservice_name.rule=Host(`your.url.url`)"
                   # Set service
-                  - "traefik.http.services.mibdeparrain.loadbalancer.server.port=80"
-                  - "traefik.http.routers.mibdeparrain.tls.certresolver=le"
+                  - "traefik.http.services.webservice_name.loadbalancer.server.port=80"
+                  - "traefik.http.routers.webservice_name.tls.certresolver=le"
                   # Set to the secure endpoint
-                  - "traefik.http.routers.mibdeparrain.entrypoints=secure"
+                  - "traefik.http.routers.webservice_name.entrypoints=secure"
                   # Redirect
-                  - "traefik.http.routers.mibdeparrain-redir.rule=Host(`your.url.url`)"
-                  - "traefik.http.routers.mibdeparrain-redir.entrypoints=insecure"
-                  - "traefik.http.routers.mibdeparrain-redir.middlewares=redirect-to-https"
+                  - "traefik.http.routers.webservice_name-redir.rule=Host(`your.url.url`)"
+                  - "traefik.http.routers.webservice_name-redir.entrypoints=insecure"
+                  - "traefik.http.routers.webservice_name-redir.middlewares=redirect-to-https"
       databaseservice_name:
             container_name: database_server.container.name
             image: mysql:latest
