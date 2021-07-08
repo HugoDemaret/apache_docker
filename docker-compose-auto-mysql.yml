@@ -29,7 +29,7 @@ services:
                   - "traefik.http.routers.mibdeparrain-redir.entrypoints=insecure"
                   - "traefik.http.routers.mibdeparrain-redir.middlewares=redirect-to-https"
       databaseservice_name:
-            container_name: mysql_server.container.name
+            container_name: database_server.container.name
             image: mysql:latest
             networks:
                   mysql-network:
