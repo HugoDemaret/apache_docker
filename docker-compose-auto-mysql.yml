@@ -1,7 +1,7 @@
 version: '3'
 services:
       webservice_name:
-            container_name: website
+            container_name: website.container.name
             build:
                   context: .
                   dockerfile: Dockerfile
@@ -29,7 +29,7 @@ services:
                   - "traefik.http.routers.mibdeparrain-redir.entrypoints=insecure"
                   - "traefik.http.routers.mibdeparrain-redir.middlewares=redirect-to-https"
       databaseservice_name:
-            container_name: mysql_server
+            container_name: mysql_server.container.name
             image: mysql:latest
             networks:
                   mysql-network:
@@ -41,7 +41,7 @@ services:
                   MYSQL_ROOT_PASSWORD: root.password
                   MYSQL_DATABASE: database.name
                   MYSQL_USER: user.name
-                  MYSQL_PASSWORD: use.password
+                  MYSQL_PASSWORD: user.password
             ports:
                   - '3306:3306'
 networks:
