@@ -1,7 +1,7 @@
 version: '3'
 services:
       webservice_name:
-            container_name: website
+            container_name: website.container.name
             build:
                   context: .
                   dockerfile: Dockerfile
@@ -29,7 +29,7 @@ services:
                   - "traefik.http.routers.mibdeparrain-redir.entrypoints=insecure"
                   - "traefik.http.routers.mibdeparrain-redir.middlewares=redirect-to-https"
       databaseservice_name:
-            container_name: pgsql_server
+            container_name: database_server.container.name
             image: postgres:latest
             networks:
                   pgsql-network:
