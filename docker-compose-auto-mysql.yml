@@ -1,13 +1,13 @@
 version: '3'
 services:
-      mibdeparrain:
+      webservice_name:
             container_name: website
             build:
                   context: .
                   dockerfile: Dockerfile
             restart: unless-stopped
             depends_on:
-                  - parrainagedb
+                  - databaseservice_name
             networks:
                   expose-network:
                   mysql-network:
@@ -28,7 +28,7 @@ services:
                   - "traefik.http.routers.mibdeparrain-redir.rule=Host(`your.url.url`)"
                   - "traefik.http.routers.mibdeparrain-redir.entrypoints=insecure"
                   - "traefik.http.routers.mibdeparrain-redir.middlewares=redirect-to-https"
-      parrainagedb:
+      databaseservice_name:
             container_name: mysql_server
             image: mysql:latest
             networks:
