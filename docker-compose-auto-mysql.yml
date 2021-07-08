@@ -12,7 +12,7 @@ services:
                   expose-network:
                   mysql-network:
             volumes:
-                  - /PATH/TO/VOLUME:/var/www/html
+                  - path.to.website:/var/www/html
             labels:
                   #Redirect to https (don t include in other services)
                   - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
@@ -35,7 +35,7 @@ services:
                   mysql-network:
             command: --default-authentication-plugin=mysql_native_password
             volumes:
-                  - /PATH/TO/VOLUME:/var/lib/mysql
+                  - path.to.db:/var/lib/mysql
             restart: always
             environment:
                   MYSQL_ROOT_PASSWORD: root.password
