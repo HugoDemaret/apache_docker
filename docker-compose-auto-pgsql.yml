@@ -12,7 +12,7 @@ services:
                   expose-network:
                   pgsql-network:
             volumes:
-                  - /PATH/TO/VOLUME:/var/www/html
+                  - path.to.website:/var/www/html
             labels:
                   #Redirect to https (don t include in other services)
                   - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
@@ -34,7 +34,7 @@ services:
             networks:
                   pgsql-network:
             volumes:
-                  - /PATH/TO/VOLUME:/var/lib/pgsql
+                  - path.to.db:/var/lib/pgsql
             restart: always
             environment:
                   POSTGRES_DB: database.name
