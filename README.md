@@ -16,3 +16,5 @@ The script automatically generates everything needed for the website to work !
 - Make a french translation
 - Make a version for Windows (using PowerShell)
 - Add support for more database
+- Add support for more linux distros (Archlinux, Centos, Fedora, Gentoo)
+- Add support for MacOS X (homebrew)
