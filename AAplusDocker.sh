@@ -15,7 +15,8 @@ cat << 'EOF'
 ./ /__| (_| | |_|| (_| | (_) | (__|   <  __/ |   
 \_____/\__,_|     \__,_|\___/ \___|_|\_\___|_|   
                                                  
-EOF                                 
+EOF    
+
 echo "Version : $VERSION"
 
 # User awareness about damage
