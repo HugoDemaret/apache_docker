@@ -134,8 +134,15 @@ then
 echo "ERROR : start.sh already exists. Aborting to avoid damage "
 exit
 fi
+echo "Beginning configuration of start.sh script... "
 touch start.sh
 PATH="$(pwd)\/website"
 echo '#!bin/bash' >> start.sh
+echo 'echo "Updating permissions..."' >> start.sh
 echo "chown -R 33\:33 $PATH" >> start.sh
+echo 'echo "Starting the service !"' >> start.sh
 echo "docker-compose up -d" >> start.sh
+echo 'echo "Done!"' >> start.sh
+echo "start.sh configuration complete!"
+
+echo "Configuration complete! Do not forget to install traefik!"
