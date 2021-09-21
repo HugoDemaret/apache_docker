@@ -28,7 +28,7 @@ which docker >/dev/null || (sudo apt-get install docker docker-compose)
 which git >/dev/null || (sudo apt-get install git)
 
 # Checks if a docker-compose.yml and Dockerfile exists in the current directory. If yes, abort (to avoid damage)
-for item in ./apache_webservice/docker-file.yml ./apache_webservice/Dockerfile ./apache_webservice/start.sh
+for item in ./apache_webservice/docker-compose.yml ./apache_webservice/Dockerfile ./apache_webservice/start.sh
 do
     if [ -f "$item" ]
     then
