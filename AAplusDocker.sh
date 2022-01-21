@@ -64,7 +64,7 @@ then
     echo "RUN docker-php-ext-install pdo pdo_mysql msqli" >> Dockerfile
     wget $MYSQL_image
     mv docker-compose-auto-mysql.yml docker-compose.yml
-    # Technically only for windows users but resolved a problem for me (why ?)
+    # Technically only for windows users but resolved a problem for me (why ?) <= because I didn t read the doc properly
     sed -i -e"s/\;extension\=php_pdo_mysql.dll/extension\=php_pdo_mysql.dll/g" ./config_files/php.ini
     sed -i -e"s/\;extension\=php_mysqli.dll/extension\=php_mysqli.dll/g" ./config_files/php.ini
 elif [ "$DB_choice" -eq "2" ]
@@ -73,7 +73,7 @@ then
     echo "RUN docker-php-ext-instal pdo pdo_pqsql" >> Dockerfile
     wget $PGSQL_image
     mv docker-compose-auto-pgsql.yml docker-compose.yml
-    # Technically only for windows users but resolved a problem for me (why ?)
+    # Technically only for windows users but resolved a problem for me (why ?) <= because I didn t read the doc properly
     sed -i -e"s/\;extension\=php_pdo_pgsql.dll/extension\=php_pdo_pgsql.dll/g" ./config_files/php.ini
     sed -i -e"s/\;extension\=php_pgsql.dll/extension\=php_pgsql.dll/g" ./config_files/php.ini
 else
